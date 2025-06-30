@@ -23,7 +23,7 @@ h1 {
     letter-spacing: 0.5px;
     font-size: 2.5rem;
     border-radius: 5px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
 }
 
 
@@ -299,6 +299,9 @@ form button:hover {
     outline: none;
     border-radius: 10px;
     background-color: #65abf5;
+    display: flex;
+    align-content: center;
+    gap: 10px;
     /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
     cursor: pointer;
     transition: transform 0.3s ease-in-out, background-color 0.15s ease-in-out;
@@ -311,6 +314,11 @@ form button:hover {
 
 #showWeatherBtn:active {
     transform: scale(0.95);
+}
+
+#weatherIcon {
+    width: 20px;
+    height: 20px;
 }
 
 #cityInput {
