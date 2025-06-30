@@ -75,6 +75,7 @@ form button:hover {
 .controls {
     display: flex;
     /* Uses flexbox for layout  */
+    position: relative;
     justify-content: space-between;
     /* Distributes space between child elements  */
     align-items: center;
@@ -83,12 +84,22 @@ form button:hover {
     /* Adds vertical margins to separate controls from other elements  */
 }
 
+.controls #searchIcon {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
 .controls input {
     flex: 1;
     /* Allows the search input to take available space  */
-    padding: 10px;
+    padding: 11px;
     /* Adds padding inside the search input  */
-    border: 1px solid #ccc;
+    padding-left: 30px;
+    /* border: 1px solid #555454; */
+    border-style: none;
     /* Light gray border for the search input  */
     border-radius: 4px;
     /* Rounds the corners of the search input  */
@@ -99,7 +110,8 @@ form button:hover {
     /* Adds space to the left of the filter dropdown  */
     padding: 10px;
     /* Adds padding inside the select element  */
-    border: 1px solid #ccc;
+    /* border: 1px solid #727070; */
+    border-style: none;
     /* Light gray border for the select element  */
     border-radius: 4px;
     /* Rounds the corners of the select element  */
