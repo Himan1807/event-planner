@@ -1,0 +1,310 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('Images/bg2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-blend-mode: overlay;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(2px);
+}
+
+form,
+.event-item {
+    background: rgba(145, 145, 145, 0.95);
+}
+
+h1 {
+    text-align: center;
+    color: #1f1e1e;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 2.5rem;
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+}
+
+
+/* Centers the main heading and sets its color  */
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allows form elements to wrap to the next line  */
+    gap: 10px;
+    /* Adds space between form elements  */
+    background: #fff;
+    /* White background for the form  */
+    padding: 15px;
+    /* Adds padding inside the form  */
+    border-radius: 8px;
+    /* Rounds the corners of the form  */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Adds a shadow to the form  */
+}
+
+form input,
+form button,
+form select {
+    flex: 1 1 100%;
+    /* Makes form elements take full width on smaller screens  */
+    padding: 10px;
+    /* Adds padding inside form elements  */
+    border: 1px solid #ccc;
+    /* Light gray border for form elements  */
+    border-radius: 4px;
+    /* Rounds the corners of form elements  */
+}
+
+form button {
+    background-color: #28a745;
+    /* Green background for the submit button  */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in;
+}
+
+form button:hover {
+    background-color: #218838;
+    /* Darker green on hover for better user feedback  */
+}
+
+.controls {
+    display: flex;
+    /* Uses flexbox for layout  */
+    justify-content: space-between;
+    /* Distributes space between child elements  */
+    align-items: center;
+    /* Aligns items vertically centered  */
+    margin: 20px 0;
+    /* Adds vertical margins to separate controls from other elements  */
+}
+
+.controls input {
+    flex: 1;
+    /* Allows the search input to take available space  */
+    padding: 10px;
+    /* Adds padding inside the search input  */
+    border: 1px solid #ccc;
+    /* Light gray border for the search input  */
+    border-radius: 4px;
+    /* Rounds the corners of the search input  */
+}
+
+.controls select {
+    margin-left: 10px;
+    /* Adds space to the left of the filter dropdown  */
+    padding: 10px;
+    /* Adds padding inside the select element  */
+    border: 1px solid #ccc;
+    /* Light gray border for the select element  */
+    border-radius: 4px;
+    /* Rounds the corners of the select element  */
+}
+
+.events {
+    list-style: none;
+    /* Removes default list styling  */
+    padding: 0;
+    /* Removes default padding from the list  */
+}
+
+.event-item {
+    background: #fff;
+    /* White background for each event item  */
+    padding: 15px;
+    /* Adds padding inside event items  */
+    margin-bottom: 10px;
+    /* Adds space below each event item  */
+    border-left: 5px solid #007bff;
+    /* Blue left border to indicate event status  */
+    border-radius: 4px;
+    /* Rounds the corners of event items  */
+    display: flex;
+    flex-direction: column;
+    /* Stacks child elements vertically  */
+}
+
+.event-item.completed {
+    border-left-color: #28a745;
+    /* Changes border color to green for completed events  */
+    opacity: 0.7;
+    /* Reduces opacity to indicate completion  */
+    text-decoration: line-through;
+    /* Strikes through text to show completion  */
+}
+
+.event-header {
+    display: flex;
+    /* Uses flexbox for header layout  */
+    justify-content: space-between;
+    /* Distributes space between title and action buttons  */
+    align-items: center;
+    /* Vertically centers header content  */
+}
+
+.event-header h3 {
+    margin: 0;
+    /* Removes default margin from the heading  */
+    color: #333;
+    /* Dark gray color for event titles  */
+}
+
+.event-details {
+    margin: 10px 0;
+    /* Adds vertical margins to event details  */
+    color: #555;
+    /* Medium gray color for event details text  */
+}
+
+.event-actions button {
+    padding: 8px;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.event-actions .edit-btn {
+    background-color: #ffc107;
+}
+
+
+/* Yellow background for edit button  */
+
+.event-actions .delete-btn {
+    background-color: #dc3545;
+}
+
+
+/* Red background for delete button  */
+
+.event-actions .share-btn {
+    background-color: #17a2b8;
+}
+
+
+/* Teal background for share button  */
+
+.event-actions .complete-btn {
+    background-color: #28a745;
+}
+
+
+/* Green background for complete button  */
+
+.share-message {
+    color: green;
+    /* Green text color for share confirmation  */
+    font-size: 0.9em;
+    /* Slightly smaller font size for the message  */
+    display: none;
+    /* Hidden by default, shown when sharing  */
+    margin-top: 5px;
+    /* Adds space above the message  */
+}
+
+@media (min-width: 600px) {
+    form input,
+    form button,
+    form select {
+        flex: 1 1 calc(33.333% - 20px);
+        /* Adjusts form elements to occupy a third of the width on larger screens  */
+    }
+    .controls input {
+        flex: 1 1 70%;
+        /* Makes search input take 70% width on larger screens  */
+    }
+    .controls select {
+        flex: 1 1 25%;
+        /* Makes filter select take 25% width on larger screens  */
+    }
+}
+
+.weather-popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 250px;
+    background: #fff;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+@keyframes fade-in {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.weather-popup.fade-in {
+    animation: fade-in 0.3s ease-out;
+}
+
+.weather-popup button {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 7px
+}
+
+.weather-popup button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in;
+}
+
+.weather-popup button:hover {
+    background-color: #0056b3;
+}
+
+.weather-popup.hidden {
+    display: none;
+}
+
+#showWeatherBtn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: #65abf5;
+    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+#showWeatherBtn:hover {
+    transform: scale(1.05);
+    background-color: #529eef
+}
+
+#showWeatherBtn:active {
+    transform: scale(0.95);
+}
+
+#cityInput {
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin: 10px;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Planner</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="Images/svg1.png" type="image/x-icon">
+    <link rel="manifest" href="manifest.json">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-messaging-compat.js"></script>
+
+</head>
+
+<body>
+    <h1>📅 Event Planner</h1>
+    <!-- Main heading of the page  -->
+    <form id="eventForm">
+        <input type="text" id="eventTitle" placeholder="Event Title" required/>
+        <!-- Input for event title  -->
+        <input type="date" id="eventDate" required/>
+        <!-- Input for event date  -->
+        <input type="time" id="eventTime" required/>
+        <!-- Input for event time  -->
+        <button type="submit">Add Event</button>
+        <!-- Submit button to add the event  -->
+    </form>
+
+    <div class="controls">
+        <input type="text" id="searchInput" placeholder="Search events...">
+        <!-- Search input to filter events  -->
+        <select id="filterSelect"> <!-- Dropdown to select event filters  -->
+            <option value="all">All Events</option> <!-- Option to show all events  -->
+            <option value="upcoming">Upcoming</option> <!-- Option to show upcoming events  -->
+            <option value="completed">Completed</option> <!-- Option to show completed events  -->
+        </select>
+    </div>
+
+    <ul class="events" id="eventsContainer">
+        <!--  Container where event items will be rendered  -->
+    </ul>
+
+    <button id="showWeatherBtn">Check Weather</button>
+
+    <div id="weatherPopup" class="weather-popup hidden">
+        <form id="weatherForm">
+            <input type="text" id="cityInput" placeholder="Enter the city name">
+            <button type="submit" id="getWeatherBtn">Get Weather</button>
+        </form>
+        <div id="weatherDisplay"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
